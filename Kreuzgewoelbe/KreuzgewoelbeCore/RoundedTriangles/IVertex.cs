@@ -8,7 +8,7 @@ namespace KreuzgewoelbeCore.RoundedTriangles
 {
     public interface IVertex
     {
-        VectorDummy Position { get; }
+        Vector3D Position { get; }
 
         IEnumerable<ITriangle> GetAlignedFaces();
     }

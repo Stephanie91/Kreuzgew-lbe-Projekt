@@ -8,8 +8,8 @@ namespace KreuzgewoelbeCore
 {
     public interface IViewTriangle
     {
-        VectorDummy A { get; }
-        VectorDummy B { get; }
-        VectorDummy C { get; }
+        Vector3D A { get; }
+        Vector3D B { get; }
+        Vector3D C { get; }
     }
 }

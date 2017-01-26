@@ -8,6 +8,6 @@ namespace KreuzgewoelbeCore.RoundedTriangles
 {
     public interface IVertexNormal : IVertex
     {
-        VectorDummy Normal { get; }
+        Vector3D Normal { get; }
     }
 }

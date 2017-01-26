@@ -8,6 +8,6 @@ namespace KreuzgewoelbeCore
 {
     public interface IMeasuredData 
     {
-        IEnumerable<VectorDummy> GetVectors();
+        IEnumerable<Vector3D> GetVectors();
     }
 }
