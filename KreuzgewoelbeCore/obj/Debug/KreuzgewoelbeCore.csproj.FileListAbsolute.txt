@@ -1,0 +1,5 @@
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.csprojResolveAssemblyReference.cache
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\KreuzgewoelbeCore\bin\Debug\KreuzgewoelbeCore.dll
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\KreuzgewoelbeCore\bin\Debug\KreuzgewoelbeCore.pdb
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.dll
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.pdb

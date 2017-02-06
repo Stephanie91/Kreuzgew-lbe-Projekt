@@ -1,0 +1,7 @@
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.csprojResolveAssemblyReference.cache
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\TriangulationRefiner.Library\bin\Debug\TriangulationRefiner.Library.dll
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\TriangulationRefiner.Library\bin\Debug\TriangulationRefiner.Library.pdb
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\TriangulationRefiner.Library\bin\Debug\KreuzgewoelbeCore.dll
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\TriangulationRefiner.Library\bin\Debug\KreuzgewoelbeCore.pdb
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.dll
+D:\user\phahn\Projekte\c#-Projekte\Kreuzgewoelbe-Projekt\Kreuzgew-lbe-Projekt-Develope\Kreuzgewoelbe\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.pdb
