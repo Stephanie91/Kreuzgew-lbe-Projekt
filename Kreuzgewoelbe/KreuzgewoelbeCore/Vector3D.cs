@@ -8,9 +8,11 @@ namespace KreuzgewoelbeCore
         private double _y;
         private double _z;
 
-        public double Length => Math.Sqrt(_x * _x + _y * _y + _z * _z);
+        //C# 6.0 nicht möglich wegen VS 2013 in der Schule etc.
 
-        public double LengthSquared => _x * _x + _y * _y + _z * _z;
+        public double Length { get { return Math.Sqrt(_x * _x + _y * _y + _z * _z); } }
+
+        public double LengthSquared { get { return _x * _x + _y * _y + _z * _z; } }
 
         public double X
         {
@@ -174,7 +176,7 @@ namespace KreuzgewoelbeCore
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
-            return obj is Vector3D && Equals((Vector3D) obj);
+            return obj is Vector3D && Equals((Vector3D)obj);
         }
 
         public override int GetHashCode()

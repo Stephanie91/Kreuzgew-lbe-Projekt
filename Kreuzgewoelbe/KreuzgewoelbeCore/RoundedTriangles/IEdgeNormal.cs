@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace KreuzgewoelbeCore.RoundedTriangles
 {
-    public interface INormalTriangulation : ITriangulation
+    public interface IEdgeNormal : IEdge
     {
-        IEnumerable<IVertexNormal> GetVerticesNormals();
+        IVertexNormal Start { get; }
+        IVertexNormal End { get; }
     }
 }

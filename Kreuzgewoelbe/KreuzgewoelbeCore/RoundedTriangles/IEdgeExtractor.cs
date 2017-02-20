@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace KreuzgewoelbeCore.RoundedTriangles
 {
-    public interface ITriangleExtractor
+    public interface IEdgeExtractor
     {
         /// <summary>
-        /// Gibt jedes Dreieck genau einmal zurück
+        /// Gibt jede Kante in der Triangulation genau einmal zurück.
         /// </summary>
         /// <param name="triangulation"></param>
         /// <returns></returns>
-        IEnumerable<ITriangle> GetTriangles(ITriangulation triangulation);
+        IEnumerable<IEdge> GetEdges(ITriangulation triangulation);
+
+        IEnumerable<IEdgeNormal> GetEdges(INormalTriangulation triangulation);
     }
 }
