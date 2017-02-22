@@ -8,6 +8,6 @@ namespace KreuzgewoelbeCore.RoundedTriangles
 {
     public interface ITriangulator
     {
-        ITriangulation GetTriangulation(IMeasuredData data);
+        Triangulation<Vertex> GetTriangulation(IMeasuredData data);
     }
 }

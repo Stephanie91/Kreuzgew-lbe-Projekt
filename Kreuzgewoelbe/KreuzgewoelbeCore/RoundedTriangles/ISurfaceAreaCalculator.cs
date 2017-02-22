@@ -8,6 +8,6 @@ namespace KreuzgewoelbeCore.RoundedTriangles
 {
     public interface ISurfaceAreaCalculator
     {
-        double GetSurface(IEnumerable<ITriangle> triangles);
+        double GetSurface(IEnumerable<Triangle> triangles);
     }
 }
