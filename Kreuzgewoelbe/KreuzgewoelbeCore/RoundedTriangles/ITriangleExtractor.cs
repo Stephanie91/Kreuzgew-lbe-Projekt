@@ -13,6 +13,6 @@ namespace KreuzgewoelbeCore.RoundedTriangles
         /// </summary>
         /// <param name="triangulation"></param>
         /// <returns></returns>
-        IEnumerable<ITriangle> GetTriangles(ITriangulation triangulation);
+        IEnumerable<Triangle> GetTriangles(Triangulation<Vertex> triangulation);
     }
 }

@@ -13,6 +13,6 @@ namespace KreuzgewoelbeCore.RoundedTriangles
         /// </summary>
         /// <param name="triangulation"></param>
         /// <returns></returns>
-        ITriangulation GetRefinedTriangulation(INormalTriangulation triangulation);
+        Triangulation<Vertex> GetRefinedTriangulation(Triangulation<VertexNormal> triangulation);
     }
 }

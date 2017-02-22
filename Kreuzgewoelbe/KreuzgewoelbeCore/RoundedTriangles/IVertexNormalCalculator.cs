@@ -13,6 +13,6 @@ namespace KreuzgewoelbeCore.RoundedTriangles
         /// </summary>
         /// <param name="triangulation">Eine Triangulation, in der nicht jedes Vertex eine Normale hat.</param>
         /// <returns></returns>
-        INormalTriangulation GetNormalTriangulation(ITriangulation triangulation);
+        Triangulation<VertexNormal> GetNormalTriangulation(Triangulation<Vertex> triangulation);
     }
 }
