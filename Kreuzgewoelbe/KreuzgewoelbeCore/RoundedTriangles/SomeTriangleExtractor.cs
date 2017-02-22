@@ -8,9 +8,9 @@ namespace KreuzgewoelbeCore.RoundedTriangles
 	{
 		// caution: this expects that ITriangle has
 		// value-semantics for GetHashCode and Equals
-		public IEnumerable<ITriangle> GetTriangles (ITriangulation triangulation)
+		public IEnumerable<Triangle> GetTriangles(Triangulation<Vertex> triangulation)
 		{
-			var ret = new HashSet<ITriangle> ();
+			var ret = new HashSet<Triangle> ();
 			foreach (var vertex in triangulation.GetVertices()) {
 				foreach (var triangle in vertex.GetAlignedFaces()) {
 					ret.Add (triangle);

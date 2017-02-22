@@ -7,7 +7,7 @@ namespace KreuzgewoelbeCore.RoundedTriangles
 	public class SomeSurfaceAreaCalculator : ISurfaceAreaCalculator
 	{
 		// assumes triangles to be unique (no duplicate triangles)
-		public double GetSurface(IEnumerable<ITriangle> triangles)
+		public double GetSurface(IEnumerable<Triangle> triangles)
 		{
 			// rounding errs?
 			return triangles.Aggregate (0.0, 
@@ -17,7 +17,7 @@ namespace KreuzgewoelbeCore.RoundedTriangles
 		}
 
 		// this belongs to triangle...
-		private static double CalcSurface(ITriangle triangle)
+		private static double CalcSurface(Triangle triangle)
 		{
 			var deltaB = triangle.B - triangle.A;
 			var deltaC = triangle.C - triangle.A;
