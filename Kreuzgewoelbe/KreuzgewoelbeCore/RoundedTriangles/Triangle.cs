@@ -26,5 +26,12 @@ namespace KreuzgewoelbeCore.RoundedTriangles
         {
             get { return VertexA.Position; }
         }
+
+        public Triangle(Vertex a, Vertex b, Vertex c)
+        {
+            VertexA = a;
+            VertexB = b;
+            VertexC = c;
+        }
     }
 }

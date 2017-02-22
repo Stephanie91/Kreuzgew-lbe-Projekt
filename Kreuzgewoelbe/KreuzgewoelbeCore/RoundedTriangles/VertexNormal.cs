@@ -10,8 +10,8 @@ namespace KreuzgewoelbeCore.RoundedTriangles
     {
         public Vector3D Normal { get; private set; }
 
-        public VertexNormal(Vector3D position, Vector3D normal)
-            : base(position)
+        public VertexNormal(Vector3D position, Vector3D normal, IEnumerable<Triangle> alignedFaces)
+            : base(position, alignedFaces)
         {
             Normal = normal;
         }

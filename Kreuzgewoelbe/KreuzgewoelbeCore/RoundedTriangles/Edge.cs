@@ -11,7 +11,13 @@ namespace KreuzgewoelbeCore.RoundedTriangles
         public V Start { get; private set; }
         public V End { get; private set; }
 
+        /// <summary>
+        /// nicht zwingend auf der linken Seite
+        /// </summary>
         public Triangle LeftTriangle { get; private set; }
+        /// <summary>
+        /// nicht zwingend auf der rechten Seite
+        /// </summary>
         public Triangle RightTriangle { get; private set; }
 
         public Edge(V start, V end)
@@ -19,9 +25,24 @@ namespace KreuzgewoelbeCore.RoundedTriangles
             Start = start;
             End = end;
 
-            //todo 
-            //vielleicht triangles aus alignedfaces der vertices holen.
-            //vielleicht reiner getter
+            var containingTriangles = start.GetAlignedFaces().Union(end.GetAlignedFaces());
+
+            int index = 0;
+            foreach (var triangle in containingTriangles)
+            {
+                switch (index)
+                {
+                    case 0:
+                        LeftTriangle = triangle;
+                        break;
+                    case 1:
+                        RightTriangle = triangle;
+                        break;
+                    default:
+                        throw new ArgumentException("Only two triangles can share an edge. The vertices seem to be invalid.");
+                }
+                index++;
+            }
         }
     }
 }
