@@ -27,12 +27,54 @@ namespace TriangulationRefiner
         {
             var edges = _EdgeExtractor.GetEdges(triangulation).Select(e => FunctionEdgeFactory(e)).ToList();
 
-            var triangles = GetEdgeTriples(edges);
+            var triangles = GetEdgeTriangles(edges);
 
-            Triangle[] newTriangles = new Triangle[triangles.Count * 4];
+            Triangle[] refinedTriangles = CreateRefinedTrianglesFromEdgeTriangles(triangles);
+
+            var vertices = ExtractVertices(refinedTriangles);
+
+            return new Triangulation<Vertex>(vertices);
+        }
+
+        private IEnumerable<Vertex> ExtractVertices(IEnumerable<Triangle> refinedTriangles)
+        {
+            Dictionary<Vertex, List<Triangle>> vertices = new Dictionary<Vertex, List<Triangle>>();
+
+            //gehe jedes Vertex in jedem Dreieck durch
+            foreach (var triangle in refinedTriangles)
+            {
+                foreach (var vertex in new[] { triangle.VertexA, triangle.VertexB, triangle.VertexC }
+                    .Cast<EditableVertex>())
+                {
+                    //wenn Vertex schon einml vorkam, ordne Dreieck zum Vertex hinzu,
+                    //ansonsten erstelle neuen Eintrag
+                    List<Triangle> alignedTriangles;
+                    if (vertices.TryGetValue(vertex, out alignedTriangles))
+                    {
+                        alignedTriangles.Add(triangle);
+                    }
+                    else
+                    {
+                        alignedTriangles = new List<Triangle> { triangle };
+                        vertices.Add(vertex, alignedTriangles);
+                    }
+                }
+            }
+
+            //füge Dreiecksliste zum Vertex hinzu und wähle Vertex aus
+            return vertices.Select(kv =>
+            {
+                (kv.Key as EditableVertex).SetTriangles(kv.Value);
+                return kv.Key;
+            }).ToList();
+        }
+
+        private Triangle[] CreateRefinedTrianglesFromEdgeTriangles(ICollection<FunctionEdgeTriangle> feTriangles)
+        {
+            Triangle[] newTriangles = new Triangle[feTriangles.Count * 4];
 
             int index = 0;
-            foreach (var fTriangle in triangles)
+            foreach (var fTriangle in feTriangles)
             {
                 //neue randdreiecke
                 newTriangles[index++] = CreateNewCornerTriangle(fTriangle, t => t.VertexA);
@@ -45,9 +87,8 @@ namespace TriangulationRefiner
                     fTriangle.Edge2.NextVertex,
                     fTriangle.Edge3.NextVertex);
             }
-            //TODO select vertices from triangles
 
-            return new Triangulation<Vertex>(null);
+            return newTriangles;
         }
 
         private Triangle CreateNewCornerTriangle(FunctionEdgeTriangle fTriangle,
@@ -71,7 +112,7 @@ namespace TriangulationRefiner
         /// </summary>
         /// <param name="edges">jede kante mit funktion genau ein mal</param>
         /// <returns></returns>
-        private List<FunctionEdgeTriangle> GetEdgeTriples(IEnumerable<FunctionEdge> edges)
+        private List<FunctionEdgeTriangle> GetEdgeTriangles(IEnumerable<FunctionEdge> edges)
         {
             var triangles = new List<FunctionEdgeTriangle>();
 

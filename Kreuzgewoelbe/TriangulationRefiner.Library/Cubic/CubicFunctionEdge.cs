@@ -7,7 +7,7 @@ using System.Text;
 
 namespace TriangulationRefiner.Cubic
 {
-    public class CubicFunctionEdge : FunctionEdge
+    public class CubicFunctionEdge : ParameterizedFunctionEdge
     {
         public CubicFunctionEdge(VertexNormal start, VertexNormal end)
             : base(start, end)
@@ -17,9 +17,9 @@ namespace TriangulationRefiner.Cubic
             : this(toCopy.Start, toCopy.End)
         { }
 
-        protected override Vertex GetNextVertex()
+        protected override EditableVertex GetNextVertex(double gradientStart, double gradientEnd)
         {
-            throw new NotImplementedException("todo");
+            throw new NotImplementedException();
         }
     }
 }

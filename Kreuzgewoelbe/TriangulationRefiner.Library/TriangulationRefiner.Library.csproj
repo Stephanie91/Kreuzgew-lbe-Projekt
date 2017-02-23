@@ -40,9 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cubic\CubicTriangulationRefiner.cs" />
+    <Compile Include="EditableVertex.cs" />
     <Compile Include="FunctionEdgeTriangle.cs" />
     <Compile Include="Cubic\CubicFunctionEdge.cs" />
     <Compile Include="GenericTriangulationRefiner.cs" />
+    <Compile Include="ParameterizedFunctionEdge.cs" />
     <Compile Include="TriangulationRefiner.cs" />
     <Compile Include="FunctionEdge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
