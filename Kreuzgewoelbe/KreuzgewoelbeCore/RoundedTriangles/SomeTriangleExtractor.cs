@@ -21,4 +21,3 @@ namespace KreuzgewoelbeCore.RoundedTriangles
 		}
 	}
 }
-
