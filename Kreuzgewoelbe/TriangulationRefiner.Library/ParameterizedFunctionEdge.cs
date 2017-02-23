@@ -21,46 +21,70 @@ namespace TriangulationRefiner
             _EdgeVector = end.Position - start.Position;
         }
 
-        protected abstract EditableVertex GetNextVertex(double gradientStart, double gradientEnd);
+        /// <summary>
+        /// Berechne wert im Parametrisierten Raum.
+        /// </summary>
+        /// <param name="gradientStart">Steigung in x=0</param>
+        /// <param name="gradientEnd">steigung in x=1</param>
+        /// <returns>gibt (x,y) im R zurück</returns>
+        protected abstract Tuple<double, double> GetNextVertex(double gradientStart, double gradientEnd);
 
-        protected sealed override EditableVertex GetNextVertex()
+        protected sealed override FaceEditableVertex GetNextVertex()
         {
-            var gradientStart = GetGradientOverEdge(Start.Normal);
-            //steigung wird negativ, damit die Funktion hier sinkt
-            var gradientEnd = -GetGradientOverEdge(End.Normal);
+            var gradientStart = new GradientResult(this, p => p.Start);
+
+            var gradientEnd = new GradientResult(this, p => p.End);
 
             //sonderfall: nehme mittelpunkt der geraden
-            if (gradientStart == 0 && gradientEnd == 0)
+            if (gradientStart.Gradient == 0 && gradientEnd.Gradient == 0)
             {
-                return new EditableVertex(Start.Position + _EdgeVector * 0.5);
+                return new FaceEditableVertex(Start.Position + _EdgeVector * 0.5);
             }
             else
             {
-                return GetNextVertex(gradientStart, gradientEnd);
+                //Übergebe Parametrisierte Werte.
+                //steigung in B wird negativ, damit die Funktion hier sinkt
+                var parameterizedValues = GetNextVertex(gradientStart.Gradient, -gradientEnd.Gradient);
+
+                //zurück parametrisieren der Werte
+                Vector3D interpolatedUpvector =
+                    (gradientStart.UpVector * (1 - parameterizedValues.Item1)
+                    + gradientEnd.UpVector * (parameterizedValues.Item1))
+                    .Normalize();
+
+                Vector3D position =
+                    Start.Position
+                    + parameterizedValues.Item1 * _EdgeVector
+                    + parameterizedValues.Item2 * interpolatedUpvector;
+
+                return new FaceEditableVertex(position);
             }
         }
 
-        private double GetGradientOverEdge(Vector3D normal)
+        private class GradientResult
         {
-            //lot auf normalvektor und kante
-            var lot = Vector3D.CrossProduct(normal, _EdgeVector);
-            //steigungsvektor
-            var gradientVector = Vector3D.CrossProduct(lot, normal);
-            //Vector that is pointing from edge towards its gradient
-            //it can be placed anywhere on the edge, this is still true.
-            var upVector = Vector3D.CrossProduct(lot, _EdgeVector).Normalize();
-            //formel für parametrisierte steigung nach dokumentation
-            double gradient =
-                (End.Position.Y * gradientVector.X
-                - Start.Position.Y * gradientVector.X
-                - End.Position.X * gradientVector.Y
-                + Start.Position.X * gradientVector.Y)
-                / (
-                upVector.X * gradientVector.Y
-                - upVector.Y * gradientVector.X
-                );
+            public double Gradient { get; set; }
+            public Vector3D Lot { get; set; }
+            public Vector3D GradientVector { get; set; }
+            public Vector3D UpVector { get; set; }
 
-            return gradient;
+            public GradientResult(ParameterizedFunctionEdge edge, Func<ParameterizedFunctionEdge, VertexNormal> vertexSelector)
+            {
+                Vector3D normalVector = vertexSelector(edge).Normal;
+
+                Lot = Vector3D.CrossProduct(normalVector, edge._EdgeVector);
+                GradientVector = Vector3D.CrossProduct(Lot, normalVector);
+                UpVector = Vector3D.CrossProduct(Lot, edge._EdgeVector).Normalize();
+                Gradient =
+                (edge.End.Position.Y * GradientVector.X
+                - edge.Start.Position.Y * GradientVector.X
+                - edge.End.Position.X * GradientVector.Y
+                + edge.Start.Position.X * GradientVector.Y)
+                / (
+                UpVector.X * GradientVector.Y
+                - UpVector.Y * GradientVector.X
+                );
+            }
         }
     }
 }

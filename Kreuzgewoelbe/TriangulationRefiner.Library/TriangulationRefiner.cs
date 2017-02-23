@@ -44,7 +44,7 @@ namespace TriangulationRefiner
             foreach (var triangle in refinedTriangles)
             {
                 foreach (var vertex in new[] { triangle.VertexA, triangle.VertexB, triangle.VertexC }
-                    .Cast<EditableVertex>())
+                    .Cast<FaceEditableVertex>())
                 {
                     //wenn Vertex schon einml vorkam, ordne Dreieck zum Vertex hinzu,
                     //ansonsten erstelle neuen Eintrag
@@ -64,7 +64,7 @@ namespace TriangulationRefiner
             //füge Dreiecksliste zum Vertex hinzu und wähle Vertex aus
             return vertices.Select(kv =>
             {
-                (kv.Key as EditableVertex).SetTriangles(kv.Value);
+                (kv.Key as FaceEditableVertex).SetTriangles(kv.Value);
                 return kv.Key;
             }).ToList();
         }

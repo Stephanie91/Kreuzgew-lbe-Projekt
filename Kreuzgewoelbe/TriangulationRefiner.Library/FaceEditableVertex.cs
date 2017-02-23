@@ -8,9 +8,12 @@ using System.Threading.Tasks;
 
 namespace TriangulationRefiner
 {
-    public class EditableVertex : Vertex
+    /// <summary>
+    /// ein vertex, dessen anliegende Faces im nachhinein gesetzt werden können.
+    /// </summary>
+    public class FaceEditableVertex : Vertex
     {
-        public EditableVertex(Vector3D position)
+        public FaceEditableVertex(Vector3D position)
             : base(position, Enumerable.Empty<Triangle>())
         {
 

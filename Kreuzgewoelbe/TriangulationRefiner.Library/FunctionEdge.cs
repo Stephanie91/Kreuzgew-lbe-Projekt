@@ -9,19 +9,19 @@ namespace TriangulationRefiner
 {
     public abstract class FunctionEdge : Edge<VertexNormal>
     {
-        public EditableVertex NextVertex { get { return _NextVertex.Value; } }
+        public FaceEditableVertex NextVertex { get { return _NextVertex.Value; } }
 
         /// <summary>
         /// sehr hilfreich, um die referenz zu behalten
         /// </summary>
-        private Lazy<EditableVertex> _NextVertex;
+        private Lazy<FaceEditableVertex> _NextVertex;
 
         public FunctionEdge(VertexNormal start, VertexNormal end)
             : base(start, end)
         {
-            _NextVertex = new Lazy<EditableVertex>(GetNextVertex);
+            _NextVertex = new Lazy<FaceEditableVertex>(GetNextVertex);
         }
 
-        protected abstract EditableVertex GetNextVertex();
+        protected abstract FaceEditableVertex GetNextVertex();
     }
 }
