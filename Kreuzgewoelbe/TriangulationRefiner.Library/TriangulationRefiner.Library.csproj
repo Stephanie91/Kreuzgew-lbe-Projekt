@@ -7,7 +7,7 @@
     <ProjectGuid>{93815B99-B1DD-4AF4-A7BF-FAE12AEE6E26}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TriangulationRefiner.Library</RootNamespace>
+    <RootNamespace>TriangulationRefiner</RootNamespace>
     <AssemblyName>TriangulationRefiner.Library</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -39,7 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CubicTriangulationRefiner.cs" />
+    <Compile Include="Cubic\CubicTriangulationRefiner.cs" />
+    <Compile Include="FunctionEdgeTriangle.cs" />
+    <Compile Include="Cubic\CubicFunctionEdge.cs" />
+    <Compile Include="GenericTriangulationRefiner.cs" />
+    <Compile Include="TriangulationRefiner.cs" />
+    <Compile Include="FunctionEdge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
