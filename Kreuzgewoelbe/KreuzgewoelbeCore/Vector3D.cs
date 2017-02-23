@@ -20,10 +20,10 @@ namespace KreuzgewoelbeCore
             {
                 return _x;
             }
-            set
-            {
-                _x = value;
-            }
+            //set
+            //{
+            //    _x = value;
+            //}
         }
 
         public double Y
@@ -32,10 +32,10 @@ namespace KreuzgewoelbeCore
             {
                 return _y;
             }
-            set
-            {
-                _y = value;
-            }
+            //set
+            //{
+            //    _y = value;
+            //}
         }
 
         public double Z
@@ -44,10 +44,10 @@ namespace KreuzgewoelbeCore
             {
                 return _z;
             }
-            set
-            {
-                _z = value;
-            }
+            //set
+            //{
+            //    _z = value;
+            //}
         }
 
         public Vector3D(double x, double y, double z)
@@ -97,7 +97,7 @@ namespace KreuzgewoelbeCore
             return !left.Equals(right);
         }
 
-        public void Normalize()
+        public Vector3D Normalize()
         {
             double num1 = Math.Abs(_x);
             double num2 = Math.Abs(_y);
@@ -109,14 +109,12 @@ namespace KreuzgewoelbeCore
             _x = _x / num1;
             _y = _y / num1;
             _z = _z / num1;
-            this = this / Math.Sqrt(_x * _x + _y * _y + _z * _z);
+            return this / Math.Sqrt(_x * _x + _y * _y + _z * _z);
         }
 
-        public void Negate()
+        public Vector3D Negate()
         {
-            _x = -_x;
-            _y = -_y;
-            _z = -_z;
+            return new Vector3D(-_x, -_y, -_z);
         }
 
         public static Vector3D Add(Vector3D vector1, Vector3D vector2)
