@@ -187,5 +187,10 @@ namespace KreuzgewoelbeCore
                 return hashCode;
             }
         }
+
+        public override string ToString()
+        {
+            return string.Concat("X: ", X, " Y: ", Y, " Z: ", Z);
+        }
     }
 }

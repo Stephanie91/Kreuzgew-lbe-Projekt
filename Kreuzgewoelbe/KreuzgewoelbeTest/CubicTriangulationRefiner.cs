@@ -17,16 +17,23 @@ namespace KreuzgewoelbeTest
             var fakeEdgeExtractor = new Mock<IEdgeExtractor>();
 
             Triangle[] triangles = new Triangle[1];
-            VertexNormal vA = new VertexNormal(default(Vector3D), default(Vector3D), triangles);
-            VertexNormal vB = new VertexNormal(default(Vector3D), default(Vector3D), triangles);
-            VertexNormal vC = new VertexNormal(default(Vector3D), default(Vector3D), triangles);
-            triangles[0] = new Triangle(vA, vB, vC);
 
-            var triangulation = new Triangulation<VertexNormal>(new[] { vA, vB, vC });
+            Vector3D vA = new Vector3D(0, 1, 0);
+            Vector3D vB = new Vector3D(1, 1, 0);
+            Vector3D vC = new Vector3D(0, 1, 1);
+
+            VertexNormal vtA = new VertexNormal(vA, new Vector3D(-1, 1, -1), triangles);
+            VertexNormal vtB = new VertexNormal(vB, vB, triangles);
+            VertexNormal vtC = new VertexNormal(vC, vC, triangles);
+            triangles[0] = new Triangle(vtA, vtC, vtB);
+
+            var triangulation = new Triangulation<VertexNormal>(new[] { vtA, vtB, vtC });
 
             fakeEdgeExtractor.Setup(e => e.GetEdges(triangulation)).Returns(() => new[]
             {
-             new Edge<VertexNormal>(vA,vB),   
+             new Edge<VertexNormal>(vtA,vtB),   
+             new Edge<VertexNormal>(vtB,vtC),   
+             new Edge<VertexNormal>(vtC,vtA),   
             });
 
 
@@ -40,5 +47,7 @@ namespace KreuzgewoelbeTest
             //assert
 
         }
+
+        public VertexNormal vtA { get; set; }
     }
 }

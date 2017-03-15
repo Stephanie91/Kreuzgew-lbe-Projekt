@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
- 
+
 
 namespace KreuzgewoelbeCore.RoundedTriangles
 {
-    public class Edge<V> where V : Vertex
+    public class Edge<V> : IEquatable<Edge<V>> where V : Vertex
     {
         public V Start { get; private set; }
         public V End { get; private set; }
@@ -43,6 +43,28 @@ namespace KreuzgewoelbeCore.RoundedTriangles
                 }
                 index++;
             }
+        }
+
+
+        public bool Equals(Edge<V> b)
+        {
+            return b != null &&
+            (Start.Equals(b.Start)
+            && End.Equals(b.End)
+            ||
+            (Start.Equals(b.End)
+            && End.Equals(b.Start)));
+        }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Edge<V>);
+        }
+
+        public override int GetHashCode()
+        {
+            return Start.GetHashCode() +
+            End.GetHashCode();
         }
     }
 }

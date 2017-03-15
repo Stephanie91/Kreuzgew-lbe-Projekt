@@ -44,7 +44,7 @@ namespace TriangulationRefiner
             {
                 //Übergebe Parametrisierte Werte.
                 //steigung in B wird negativ, damit die Funktion hier sinkt
-                var parameterizedValues = GetNextVertex(gradientStart.Gradient, -gradientEnd.Gradient);
+                var parameterizedValues = GetNextVertex(gradientStart.Gradient, gradientEnd.Gradient);
 
                 //zurück parametrisieren der Werte
                 Vector3D interpolatedUpvector =
@@ -73,8 +73,11 @@ namespace TriangulationRefiner
                 Vector3D normalVector = vertexSelector(edge).Normal;
 
                 Lot = Vector3D.CrossProduct(normalVector, edge._EdgeVector);
-                GradientVector = Vector3D.CrossProduct(Lot, normalVector);
-                UpVector = Vector3D.CrossProduct(Lot, edge._EdgeVector).Normalize();
+                GradientVector = Vector3D.CrossProduct(Lot, normalVector).Normalize();
+                UpVector = Vector3D.CrossProduct(edge._EdgeVector, Lot).Normalize();
+
+                //formel für gradient ignoriert evtl. lineare abhängigkeiten
+                //todo
                 Gradient =
                 (edge.End.Position.Y * GradientVector.X
                 - edge.Start.Position.Y * GradientVector.X

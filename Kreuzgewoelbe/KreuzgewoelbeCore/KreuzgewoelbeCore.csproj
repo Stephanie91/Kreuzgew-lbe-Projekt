@@ -46,6 +46,7 @@
     <Compile Include="RoundedTriangles\Edge.cs" />
     <Compile Include="RoundedTriangles\IEdgeExtractor.cs" />
     <Compile Include="RoundedTriangles\ISurfaceAreaCalculator.cs" />
+    <Compile Include="RoundedTriangles\SomeEdgeExtractor.cs" />
     <Compile Include="RoundedTriangles\Triangle.cs" />
     <Compile Include="RoundedTriangles\ITriangleExtractor.cs" />
     <Compile Include="RoundedTriangles\Triangulation.cs" />

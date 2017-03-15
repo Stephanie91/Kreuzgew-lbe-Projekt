@@ -70,6 +70,7 @@ namespace TriangulationRefiner
 
         private Triangle[] CreateRefinedTrianglesFromEdgeTriangles(ICollection<FunctionEdgeTriangle> feTriangles)
         {
+
             Triangle[] newTriangles = new Triangle[feTriangles.Count * 4];
 
             int index = 0;
@@ -96,7 +97,7 @@ namespace TriangulationRefiner
             Vertex corner = cornerSelector(fTriangle.Triangle);
 
             var closeEdges = new[] { fTriangle.Edge1, fTriangle.Edge2, fTriangle.Edge3 }
-                .Where(e => e.Start.Equals(corner)).ToArray();
+                .Where(e => e.Start.Equals(corner) || e.End.Equals(corner)).ToArray();
 
             if (closeEdges.Length != 2)
             {
@@ -122,33 +123,37 @@ namespace TriangulationRefiner
                 new { Edge = e, Triangle = e.RightTriangle }
             }))
             {
-                //nimm bereits erstelltes Dreieck
-                var triangleEdgeTripel = triangles.FirstOrDefault(t => t.Triangle == anonEt.Triangle);
-
-                //wenn noch keins erstellt ist, erstelle es
-                if (triangleEdgeTripel == null)
+                if (anonEt.Triangle != null)
                 {
-                    triangles.Add(new FunctionEdgeTriangle(anonEt.Triangle)
+                    //nimm bereits erstelltes Dreieck
+                    var triangleEdgeTripel = triangles.FirstOrDefault(t => t.Triangle == anonEt.Triangle);
+
+                    //wenn noch keins erstellt ist, erstelle es
+                    if (triangleEdgeTripel == null)
                     {
-                        Edge1 = anonEt.Edge
-                    });
-                } //sonst füge es dem gefundenen Dreieck hinzu
-                else if (triangleEdgeTripel.Edge2 == null)
-                {
-                    triangleEdgeTripel.Edge2 = anonEt.Edge;
+                        triangles.Add(new FunctionEdgeTriangle(anonEt.Triangle)
+                        {
+                            Edge1 = anonEt.Edge
+                        });
+                    } //sonst füge es dem gefundenen Dreieck hinzu
+                    else if (triangleEdgeTripel.Edge2 == null)
+                    {
+                        triangleEdgeTripel.Edge2 = anonEt.Edge;
+                    }
+                    else if (triangleEdgeTripel.Edge3 == null)
+                    {
+                        triangleEdgeTripel.Edge3 = anonEt.Edge;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Can not add a forth Edge to  triangle.");
+                    }
                 }
-                else if (triangleEdgeTripel.Edge3 == null)
-                {
-                    triangleEdgeTripel.Edge3 = anonEt.Edge;
-                }
-                else
-                {
-                    throw new ArgumentException("Can not add a forth Edge to  triangle.");
-                }
-
             }
 
             return triangles;
+            //.Where(t => t.Edge1 != null && t.Edge2 != null && t.Edge3 != null)
+            //.ToList();
         }
     }
 }
