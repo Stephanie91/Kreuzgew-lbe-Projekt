@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>2136d934-781d-4f72-9741-0bf44ecf04c4</ProjectGuid>
+    <ProjectGuid>{FB54881A-5065-46A6-AD79-D26ACCA1F827}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TriangulationRefinerTest</RootNamespace>
@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.7.1\lib\net45\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -50,8 +56,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="CubicTriangulationRefiner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KreuzgewoelbeCore\KreuzgewoelbeCore.csproj">
+      <Project>{f305411c-1183-46ae-bb32-9f4a479e2765}</Project>
+      <Name>KreuzgewoelbeCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TriangulationRefiner.Library\TriangulationRefiner.Library.csproj">
+      <Project>{93815b99-b1dd-4af4-a7bf-fae12aee6e26}</Project>
+      <Name>TriangulationRefiner.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
