@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
- 
+
 
 namespace KreuzgewoelbeCore.RoundedTriangles
 {
@@ -14,6 +14,12 @@ namespace KreuzgewoelbeCore.RoundedTriangles
             : base(position, alignedFaces)
         {
             Normal = normal;
+        }
+
+        public VertexNormal(Vertex toCopy, Vector3D normal)
+            : this(toCopy.Position, normal, toCopy.GetAlignedFaces())
+        {
+
         }
     }
 }

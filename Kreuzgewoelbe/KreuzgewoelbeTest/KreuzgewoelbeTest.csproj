@@ -6,8 +6,8 @@
     <ProjectGuid>{FB54881A-5065-46A6-AD79-D26ACCA1F827}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TriangulationRefinerTest</RootNamespace>
-    <AssemblyName>TriangulationRefinerTest</AssemblyName>
+    <RootNamespace>KreuzgewoelbeTest</RootNamespace>
+    <AssemblyName>KreuzgewoelbeTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

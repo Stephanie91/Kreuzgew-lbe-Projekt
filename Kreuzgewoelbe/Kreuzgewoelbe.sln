@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreuzgewoelbeCore", "Kreuzg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangulationRefiner.Library", "TriangulationRefiner.Library\TriangulationRefiner.Library.csproj", "{93815B99-B1DD-4AF4-A7BF-FAE12AEE6E26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangulationRefinerTest", "TriangulationRefinerTest\TriangulationRefinerTest.csproj", "{FB54881A-5065-46A6-AD79-D26ACCA1F827}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KreuzgewoelbeTest", "KreuzgewoelbeTest\KreuzgewoelbeTest.csproj", "{FB54881A-5065-46A6-AD79-D26ACCA1F827}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

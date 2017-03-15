@@ -5,7 +5,7 @@ using Moq;
 using KreuzgewoelbeCore.RoundedTriangles;
 using KreuzgewoelbeCore;
 
-namespace TriangulationRefinerTest
+namespace KreuzgewoelbeTest
 {
     [TestClass]
     public class CubicTriangulationRefinerTest
@@ -22,11 +22,14 @@ namespace TriangulationRefinerTest
             VertexNormal vC = new VertexNormal(default(Vector3D), default(Vector3D), triangles);
             triangles[0] = new Triangle(vA, vB, vC);
 
-            var triangulation = new Triangulation<VertexNormal>(new []{vA,vB,vC});
+            var triangulation = new Triangulation<VertexNormal>(new[] { vA, vB, vC });
 
-            fakeEdgeExtractor.Setup(e => e.GetEdges(triangulation));
+            fakeEdgeExtractor.Setup(e => e.GetEdges(triangulation)).Returns(() => new[]
+            {
+             new Edge<VertexNormal>(vA,vB),   
+            });
 
-            
+
             var refiner = new CubicTriangulationRefiner(fakeEdgeExtractor.Object);
 
 
