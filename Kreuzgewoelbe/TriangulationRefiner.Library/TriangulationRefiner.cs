@@ -35,17 +35,29 @@ namespace TriangulationRefiner
             return new Triangulation<Vertex>(vertices);
         }
 
-        private IEnumerable<Vertex> ExtractVertices(IEnumerable<Triangle> refinedTriangles)
+        private IEnumerable<Vertex> ExtractVertices(Triangle[] refinedTriangles)
         {
             Dictionary<Vertex, List<Triangle>> vertices = new Dictionary<Vertex, List<Triangle>>();
 
             //gehe jedes Vertex in jedem Dreieck durch
-            foreach (var triangle in refinedTriangles)
+            for (int i = 0; i < refinedTriangles.Length; i++)
             {
-                foreach (var vertex in new[] { triangle.VertexA, triangle.VertexB, triangle.VertexC }
-                    .Cast<FaceEditableVertex>())
+                var triangle = refinedTriangles[i];
+
+                var triangleVertices = new[] { triangle.VertexA, triangle.VertexB, triangle.VertexC };
+
+                if (triangle.VertexA is VertexNormal)
                 {
-                    //wenn Vertex schon einml vorkam, ordne Dreieck zum Vertex hinzu,
+                    var vnVertex = (VertexNormal)triangle.VertexA;
+
+                    var edited = new FaceEditableVertexNormal(vnVertex.Position, vnVertex.Normal);
+
+                    refinedTriangles[i] = new Triangle(edited, triangle.VertexB, triangle.VertexC);
+                }
+
+                foreach (var vertex in triangleVertices)
+                {
+                    //wenn Vertex schon einmal vorkam, ordne Dreieck zum Vertex hinzu,
                     //ansonsten erstelle neuen Eintrag
                     List<Triangle> alignedTriangles;
                     if (vertices.TryGetValue(vertex, out alignedTriangles))
@@ -63,7 +75,8 @@ namespace TriangulationRefiner
             //füge Dreiecksliste zum Vertex hinzu und wähle Vertex aus
             return vertices.Select(kv =>
             {
-                (kv.Key as FaceEditableVertex).SetTriangles(kv.Value);
+
+                (kv.Key as IEditableVertex).SetTriangles(kv.Value);
                 return kv.Key;
             }).ToList();
         }
@@ -103,7 +116,7 @@ namespace TriangulationRefiner
             {
                 throw new Exception("Something is wrong here.");
             }
-
+            //Dass die alte Ecke an der Ersten Stelle ist, wird später erwartet.
             return new Triangle(corner, closeEdges[0].NextVertex, closeEdges[1].NextVertex);
         }
 

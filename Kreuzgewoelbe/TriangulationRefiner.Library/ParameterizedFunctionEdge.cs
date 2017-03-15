@@ -77,16 +77,53 @@ namespace TriangulationRefiner
                 UpVector = Vector3D.CrossProduct(edge._EdgeVector, Lot).Normalize();
 
                 //formel für gradient ignoriert evtl. lineare abhängigkeiten
-                //todo
-                Gradient =
-                (edge.End.Position.Y * GradientVector.X
-                - edge.Start.Position.Y * GradientVector.X
-                - edge.End.Position.X * GradientVector.Y
-                + edge.Start.Position.X * GradientVector.Y)
-                / (
-                UpVector.X * GradientVector.Y
-                - UpVector.Y * GradientVector.X
+                double grad;
+
+                bool b1 = TryGradientFromVector(edge, v => v.X, v => v.Y, out  grad);
+                bool b2 = TryGradientFromVector(edge, v => v.X, v => v.Z, out  grad);
+                bool b3 = TryGradientFromVector(edge, v => v.Y, v => v.Z, out  grad);
+                bool b4 = TryGradientFromVector(edge, v => v.Y, v => v.X, out  grad);
+
+                if (!TryGradientFromVector(edge, v => v.X, v => v.Y, out grad))
+                {
+                    if (!TryGradientFromVector(edge, v => v.X, v => v.Z, out grad))
+                    {
+                        if (!TryGradientFromVector(edge, v => v.Y, v => v.Z, out grad))
+                        {
+                            throw new ArgumentException("Rays dont match.");
+                        }
+                    }
+                }
+
+                Gradient = grad;
+            }
+
+            private bool TryGradientFromVector(
+                ParameterizedFunctionEdge edge,
+                Func<Vector3D, double> component1,
+                Func<Vector3D, double> component2,
+                out double result)
+            {
+                double divider = (
+                component1(UpVector) * component2(GradientVector)
+                - component2(UpVector) * component1(GradientVector)
                 );
+
+                if (divider == 0)
+                {
+                    result = 0;
+                    return false;
+                }
+                else
+                {
+                    result = (component2(edge.End.Position) * component1(GradientVector)
+                            - component2(edge.Start.Position) * component1(GradientVector)
+                            - component1(edge.End.Position) * component2(GradientVector)
+                            + component1(edge.Start.Position) * component2(GradientVector))
+                            / divider;
+
+                    return true;
+                }
             }
         }
     }

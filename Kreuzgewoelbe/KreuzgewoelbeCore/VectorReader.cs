@@ -23,7 +23,9 @@ namespace KreuzgewoelbeCore
                         string[] vec = line.Split(sep, StringSplitOptions.None);
                         if (vec.Length != 3)
                         {
-                            throw new FormatException($"Wrong format in line: {lineCnt}");
+                            //JANNIK AUS!!
+                            //BÖÖÖSSEE!!!
+                            throw new FormatException("Wrong format in line: " + lineCnt);
                         }
 
                         yield return new Vector3D(

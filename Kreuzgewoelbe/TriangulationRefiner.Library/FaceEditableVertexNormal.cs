@@ -5,16 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
 namespace TriangulationRefiner
 {
-    /// <summary>
-    /// ein vertex, dessen anliegende Faces im nachhinein gesetzt werden können.
-    /// </summary>
-    public class FaceEditableVertex : Vertex, IEditableVertex
+    public class FaceEditableVertexNormal : VertexNormal, IEditableVertex
     {
-        public FaceEditableVertex(Vector3D position)
-            : base(position, Enumerable.Empty<Triangle>())
+        public FaceEditableVertexNormal(Vector3D position, Vector3D normal)
+            : base(position, normal, Enumerable.Empty<Triangle>())
         {
 
         }
