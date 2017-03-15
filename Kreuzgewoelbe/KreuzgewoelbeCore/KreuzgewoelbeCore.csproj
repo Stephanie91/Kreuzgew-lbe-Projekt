@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VectorReader.cs" />
     <Compile Include="IAlgorithm.cs" />
     <Compile Include="IMeasuredData.cs" />
     <Compile Include="IViewTriangle.cs" />
@@ -53,13 +54,17 @@
     <Compile Include="RoundedTriangles\Vertex.cs" />
     <Compile Include="RoundedTriangles\VertexNormal.cs" />
     <Compile Include="RoundedTriangles\IVertexNormalCalculator.cs" />
+    <Compile Include="TestPointGenerator.cs" />
     <Compile Include="Vector3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IViewdata.cs" />
     <Compile Include="RoundedTriangles\SomeSurfaceAreaCalculator.cs" />
     <Compile Include="RoundedTriangles\SomeTriangleExtractor.cs" />
+    <Compile Include="VectorWriter.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="GeneratePoints.csx" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
