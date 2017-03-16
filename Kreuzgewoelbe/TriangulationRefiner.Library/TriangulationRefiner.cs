@@ -53,6 +53,7 @@ namespace TriangulationRefiner
                     var edited = new FaceEditableVertexNormal(vnVertex.Position, vnVertex.Normal);
 
                     refinedTriangles[i] = new Triangle(edited, triangle.VertexB, triangle.VertexC);
+                    triangleVertices[0] = edited;
                 }
 
                 foreach (var vertex in triangleVertices)

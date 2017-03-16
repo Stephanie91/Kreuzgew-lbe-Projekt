@@ -45,7 +45,7 @@ namespace KreuzgewoelbeTest
 
 
             //assert
-
+            //todo
         }
 
         public VertexNormal vtA { get; set; }
