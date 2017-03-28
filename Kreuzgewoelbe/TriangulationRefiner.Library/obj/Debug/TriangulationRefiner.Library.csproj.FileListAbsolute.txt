@@ -1,0 +1,7 @@
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\TriangulationRefiner.Library\bin\Debug\TriangulationRefiner.Library.dll
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\TriangulationRefiner.Library\bin\Debug\TriangulationRefiner.Library.pdb
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\TriangulationRefiner.Library\bin\Debug\KreuzgewoelbeCore.dll
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\TriangulationRefiner.Library\bin\Debug\KreuzgewoelbeCore.pdb
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.csprojResolveAssemblyReference.cache
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.dll
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.pdb

@@ -1,0 +1,5 @@
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\KreuzgewoelbeCore\bin\Debug\KreuzgewoelbeCore.dll
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\KreuzgewoelbeCore\bin\Debug\KreuzgewoelbeCore.pdb
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.csprojResolveAssemblyReference.cache
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.dll
+G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.pdb

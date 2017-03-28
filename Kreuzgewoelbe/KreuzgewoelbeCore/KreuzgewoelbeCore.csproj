@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MeasuredDataFromCsv.cs" />
     <Compile Include="VectorReader.cs" />
     <Compile Include="IAlgorithm.cs" />
     <Compile Include="IMeasuredData.cs" />
