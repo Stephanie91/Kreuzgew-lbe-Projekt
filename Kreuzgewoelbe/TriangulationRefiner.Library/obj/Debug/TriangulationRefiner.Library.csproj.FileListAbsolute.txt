@@ -5,3 +5,10 @@ G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\Triangu
 G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.csprojResolveAssemblyReference.cache
 G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.dll
 G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.pdb
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\TriangulationRefiner.Library\bin\Debug\TriangulationRefiner.Library.dll
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\TriangulationRefiner.Library\bin\Debug\TriangulationRefiner.Library.pdb
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\TriangulationRefiner.Library\bin\Debug\KreuzgewoelbeCore.dll
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\TriangulationRefiner.Library\bin\Debug\KreuzgewoelbeCore.pdb
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.dll
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\TriangulationRefiner.Library\obj\Debug\TriangulationRefiner.Library.pdb

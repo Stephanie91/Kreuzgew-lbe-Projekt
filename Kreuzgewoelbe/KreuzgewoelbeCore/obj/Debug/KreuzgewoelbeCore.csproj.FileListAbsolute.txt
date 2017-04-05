@@ -3,3 +3,7 @@ G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\Kreuzge
 G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.csprojResolveAssemblyReference.cache
 G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.dll
 G:\Arbeit_Schule\Programmieren\Unity\GraphikKreuzgewoelbe\PluginProjects\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.pdb
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\KreuzgewoelbeCore\bin\Debug\KreuzgewoelbeCore.dll
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\KreuzgewoelbeCore\bin\Debug\KreuzgewoelbeCore.pdb
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.dll
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.pdb
