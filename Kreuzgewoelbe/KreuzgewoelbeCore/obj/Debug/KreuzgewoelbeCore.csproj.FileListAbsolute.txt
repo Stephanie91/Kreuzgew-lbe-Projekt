@@ -7,3 +7,4 @@ C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\KreuzgewoelbeCore\bin\D
 C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\KreuzgewoelbeCore\bin\Debug\KreuzgewoelbeCore.pdb
 C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.dll
 C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.pdb
+C:\Users\user\Desktop\Kreuzgew-lbe-Projekt\Kreuzgewoelbe\KreuzgewoelbeCore\obj\Debug\KreuzgewoelbeCore.csprojResolveAssemblyReference.cache
