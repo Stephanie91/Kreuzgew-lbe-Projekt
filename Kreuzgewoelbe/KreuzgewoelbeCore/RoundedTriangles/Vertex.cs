@@ -10,15 +10,16 @@ namespace KreuzgewoelbeCore.RoundedTriangles
     {
         public Vector3D Position { get; private set; }
 
-        protected IEnumerable<Triangle> _AlignedFaces;
+        protected IList<Triangle> _AlignedFaces;
 
-        public Vertex(Vector3D position, IEnumerable<Triangle> alignedFaces)
+
+        public Vertex(Vector3D position, IList<Triangle> alignedFaces)
         {
             Position = position;
             _AlignedFaces = alignedFaces;
         }
 
-        public IEnumerable<Triangle> GetAlignedFaces()
+        public IList<Triangle> GetAlignedFaces()
         {
             return _AlignedFaces;
         }

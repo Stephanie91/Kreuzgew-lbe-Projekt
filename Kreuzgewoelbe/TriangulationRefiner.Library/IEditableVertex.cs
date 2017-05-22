@@ -8,6 +8,6 @@ namespace TriangulationRefiner
 {
     interface IEditableVertex
     {
-        void SetTriangles(IEnumerable<Triangle> vertices);
+        void SetTriangles(IList<Triangle> vertices);
     }
 }
