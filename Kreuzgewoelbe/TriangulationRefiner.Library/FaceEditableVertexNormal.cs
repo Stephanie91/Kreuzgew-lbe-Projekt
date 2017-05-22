@@ -10,12 +10,12 @@ namespace TriangulationRefiner
     public class FaceEditableVertexNormal : VertexNormal, IEditableVertex
     {
         public FaceEditableVertexNormal(Vector3D position, Vector3D normal)
-            : base(position, normal, Enumerable.Empty<Triangle>())
+            : base(position, normal, new List<Triangle>())
         {
 
         }
 
-        public void SetTriangles(IEnumerable<Triangle> vertices)
+        public void SetTriangles(IList<Triangle> vertices)
         {
             this._AlignedFaces = vertices;
         }

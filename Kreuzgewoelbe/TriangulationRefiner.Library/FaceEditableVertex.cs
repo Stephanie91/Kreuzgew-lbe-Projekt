@@ -14,12 +14,12 @@ namespace TriangulationRefiner
     public class FaceEditableVertex : Vertex, IEditableVertex
     {
         public FaceEditableVertex(Vector3D position)
-            : base(position, Enumerable.Empty<Triangle>())
+            : base(position, new List<Triangle>())
         {
 
         }
 
-        public void SetTriangles(IEnumerable<Triangle> vertices)
+        public void SetTriangles(IList<Triangle> vertices)
         {
             this._AlignedFaces = vertices;
         }
